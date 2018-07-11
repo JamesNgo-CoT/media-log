@@ -1,0 +1,49 @@
+<!--
+IMPORTANT:
+Any resources from this project should be referenced using SRC_PATH preprocessor var.
+See examples below in the boilerplate code
+-->
+
+<!-- cot-app:head -->
+<!--@exec startBuildTagWithCacheBuster('styles/main.css')-->
+<!-- core:css -->
+<!-- endinject -->
+<!-- place your application stylesheet references here: -->
+<link rel="stylesheet" type="text/css" href="<!-- @echo SRC_PATH -->/styles/extended_cotapp.css">
+<link rel="stylesheet" type="text/css" href="<!-- @echo SRC_PATH -->/styles/cotlogin_button_view.css">
+<link rel="stylesheet" type="text/css" href="<!-- @echo SRC_PATH -->/styles/datatable_view.css">
+
+<link rel="stylesheet" type="text/css" href="<!-- @echo SRC_PATH -->/styles/main.css">
+<!-- endbuild -->
+<!--@exec startBuildTagWithCacheBuster('styles/core_print.css', 'media="print"')-->
+<!-- core_print:css -->
+<!-- endinject -->
+<!-- place any application print-only stylesheet references here -->
+<!-- endbuild -->
+<!-- cot-app:head end-->
+
+<!-- cot-app:body -->
+<div id="media_log_container"></div>
+<!-- cot-app:body end-->
+
+<!-- cot-app:footer -->
+<!--@exec startBuildTagWithCacheBuster('scripts/main.js')-->
+<!-- core:js -->
+<!-- endinject -->
+<!-- place your application script references here: -->
+<script type="text/javascript" src="<!-- @echo SRC_PATH -->/scripts/extended_cotapp.js"></script>
+<script type="text/javascript" src="<!-- @echo SRC_PATH -->/scripts/extended_cotlogin.js"></script>
+
+<script type="text/javascript" src="<!-- @echo SRC_PATH -->/scripts/cotlogin_model.js"></script>
+<script type="text/javascript" src="<!-- @echo SRC_PATH -->/scripts/cotlogin_button_view.js"></script>
+
+<script type="text/javascript" src="<!-- @echo SRC_PATH -->/scripts/main.js"></script>
+<!-- endbuild -->
+<!--@if ENV!='prod'-->
+<script type="text/javascript">
+  console.log('media-log running on <!--@echo ENV--> environment');
+  console.log('media-log qa release: <!--@echo QA_RELEASE-->');
+  console.log('media-log build: <!--@echo BUILD_ID-->');
+</script>
+<!--@endif-->
+<!-- cot-app:footer end-->

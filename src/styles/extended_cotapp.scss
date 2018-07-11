@@ -1,0 +1,13 @@
+#app-header {
+  .row {
+    & > div {
+      float: left;
+      padding-left: 15px;
+      padding-right: 15px;
+
+      & + div {
+        float: right;
+      }
+    }
+  }
+}
